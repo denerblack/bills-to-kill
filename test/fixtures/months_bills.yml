@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month_id: 
+  bill_id: 
+  value_id: 
+  paid_at: 2016-06-12
+
+two:
+  month_id: 
+  bill_id: 
+  value_id: 
+  paid_at: 2016-06-12

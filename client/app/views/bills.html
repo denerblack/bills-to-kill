@@ -1,0 +1,72 @@
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Dados de conta</div>
+    <div class="panel-body">
+      <form ng-submit="createBill()" editable-form name="billForm">
+        <input type="hidden" ng-model="bill.bill.id" >
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="bill.bill.name" placeholder="Nome" required>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <input type="number" class="form-control" ng-model="bill.bill.expiration_day" placeholder="Dia de Vencimento" required>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="bill.bill.fixed_value" placeholder="Valor Fixo">
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="bill.bill.fixed" placeholder="Fixo?" required>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="form-group">
+              <input type="date" class="form-control" ng-model="bill.bill.finishing_at" placeholder="Vencimento em">
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+          <button type="button" ng-click="cancelBill()" class="btn btn-danger">Cancelar</button>
+        </div>
+    </div>
+      </form>
+
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Listagem de Contas</div>
+    <div class="panel-body">
+      <table ng-table="tableParams" class="table table-striped" show-filter="true">
+        <tr ng-repeat="bill in $data">
+          <td title="'Nome'" sortable="'name'">{{bill.name}}</td>
+          <td title="'Dia de Vencimento'" sortable="'expiration_day'">{{bill.expiration_day}}</td>
+          <td title="'Valor Fixo'" sortable="'fixed_value'"> {{bill.fixed_value | currency:"R$ "}}</td>
+          <td title="'Fixo?'" >{{bill.fixed}}</td>
+          <td title="'Termina em'">{{bill.finishing_at | date:'dd/MM/yyyy'}}</td>
+          <td>
+            <button ng-click="editBill(bill)" type="button">
+              <span class="glyphicon glyphicon-edit" style="color:blue;"></span>
+            </button>
+            <button ng-click="deleteBill(bill)" type="button">
+              <span class="glyphicon glyphicon-remove" style="color:red;"></span>
+            </button>
+          </td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total Fixo</td>
+            <td>{{ (total | total:$data:'fixed_value') | currency:"R$ "}}</td>
+
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>

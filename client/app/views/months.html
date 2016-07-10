@@ -1,0 +1,37 @@
+<h1>Mês</h1>
+<div>
+  <form ng-submit="createBill()" editable-form name="billForm">
+    <div class="row">
+    </div>
+  </form>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Dia de vencimento</th>
+      <th>Valor fixo</th>
+      <th>Fixo?</th>
+      <th>Termina em</th>
+      <th>Ações</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr ng-repeat="bill in bills | orderBy:sortType:sortReverse">
+      <td filter="{ name: 'text'}">{{bill.name}}</td>
+      <td>{{bill.expiration_day}}</td>
+      <td>{{bill.fixed_value | number: 0}}</td>
+      <td>{{bill.fixed}}</td>
+      <td>{{bill.finishing_at | date:'dd/MM/yyyy'}}</td>
+      <td>
+        <a href="#" ng-click="deleteBill($index)">
+          <span class="glyphicon glyphicon-remove" style="color:red;"></span>
+        </a>
+        <a href="#" ng-click="billForm.$show()">
+          <span class="glyphicon glyphicon-remove" style="color:red;"></span>
+        </a>
+    </tr>
+  </tbody>
+</table>
+
