@@ -14,10 +14,13 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 group :development do
   gem 'capistrano'
-  gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+end
+
+group :production do
+  gem 'unicorn'
 end
 
 
