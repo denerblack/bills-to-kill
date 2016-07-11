@@ -146,6 +146,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    unicorn-rails (2.2.0)
+      rack
+      unicorn
 
 PLATFORMS
   ruby
@@ -162,3 +165,4 @@ DEPENDENCIES
   rails-api
   spring
   unicorn
+  unicorn-rails

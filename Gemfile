@@ -21,6 +21,7 @@ end
 
 group :production do
   gem 'unicorn'
+  gem "unicorn-rails"
 end
 
 
