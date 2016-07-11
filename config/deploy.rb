@@ -30,7 +30,7 @@ set :stages, ["production"]
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/mongoid.yml', 'config/secrets.yml', 'sockets/unicorn.sock')
+set :linked_files, fetch(:linked_files, []).push('config/mongoid.yml', 'config/secrets.yml', 'sockets/unicorn.sock', '.ruby-gemset', '.ruby-version')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
