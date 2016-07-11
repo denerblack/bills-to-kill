@@ -25,7 +25,7 @@ end
 =end
 # Set the working application directory
 # working_directory "/path/to/your/app"
-working_directory "/var/www/bills-to-kill"
+working_directory "/var/www/bills-to-kill/current"
 
 # Unicorn PID file location
 # pid "/path/to/pids/unicorn.pid"
