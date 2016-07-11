@@ -29,13 +29,13 @@ working_directory "/var/www/bills-to-kill/current"
 
 # Unicorn PID file location
 # pid "/path/to/pids/unicorn.pid"
-pid "/var/www/bills-to-kill/tmp/pids/unicorn.pid"
+pid "/var/www/bills-to-kill/current/tmp/pids/unicorn.pid"
 
 # Path to logs
 # stderr_path "/path/to/log/unicorn.log"
 # stdout_path "/path/to/log/unicorn.log"
-stderr_path "/var/www/bills-to-kill/log/unicorn.log"
-stdout_path "/var/www/bills-to-kill/log/unicorn.log"
+stderr_path "/var/www/bills-to-kill/current/log/unicorn.log"
+stdout_path "/var/www/bills-to-kill/current/log/unicorn.log"
 
 # Unicorn socket
 listen "/tmp/unicorn.bills-to-kill.sock"
